@@ -19,6 +19,7 @@ public class Main extends JFrame implements  ActionListener  {
 	private JLabel resultLabel;
 	private JLabel statsLabel;
 	private JButton tossButton;
+	private JButton resetButton;
     private JComboBox<String> coinSetComboBox;
 	private ImageIcon headsIcon;
 	private ImageIcon tailsIcon;
@@ -37,9 +38,19 @@ public class Main extends JFrame implements  ActionListener  {
 		// Set up the statistics label
 		statsLabel = new JLabel("Heads: 0, Tails: 0", SwingConstants.CENTER);
 
-		// Set up the button
+		// Set up the button to toss the coin
 		tossButton = new JButton("Toss the Coin");
 		tossButton.addActionListener(this);
+		
+		// Set up the reset button
+		resetButton = new JButton("Reset Stats");
+		resetButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				resetStatitics();
+			}
+		});
+		
 
         // Set up the coin set combo box
 		String[] coinSets = { "default", "coin1", "coin2" }; 
@@ -75,6 +86,10 @@ public class Main extends JFrame implements  ActionListener  {
 	            JOptionPane.showMessageDialog(this, "Error loading coin images. Please select a valid coin set.");
 	        }
 	    }
+	 
+	 private void resetStatitics() {
+		 
+	 }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
