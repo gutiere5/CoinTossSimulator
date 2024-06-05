@@ -89,7 +89,10 @@ public class Main extends JFrame implements  ActionListener  {
 	    }
 	 
 	 private void resetStatitics() {
-		 
+		 headsCount = 0;
+		 tailsCount = 0;
+		 statsLabel.setText("Heads: 0, Tails: 0");
+		 resultLabel.setIcon(null);
 	 }
 
 	@Override
