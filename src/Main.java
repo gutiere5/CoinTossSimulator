@@ -27,7 +27,7 @@ public class Main extends JFrame implements  ActionListener  {
 	public Main()  {
 		// Set up the frame
 		setTitle("Coin Toss Simulator");
-		setSize(400, 450);
+		setSize(450, 450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 
@@ -68,6 +68,7 @@ public class Main extends JFrame implements  ActionListener  {
         controlPanel.add(new JLabel("Choose Coin Set:"));
         controlPanel.add(coinSetComboBox);
         controlPanel.add(tossButton);
+        controlPanel.add(resetButton);
 
         add(statsLabel, BorderLayout.NORTH);
         add(resultLabel, BorderLayout.CENTER);
