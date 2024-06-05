@@ -1,0 +1,29 @@
+[33mcommit 00657a67ff8c305e8c8d350972b889e6d263db65[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Elber Gutierrez <gutiere5@ferris.edu>
+Date:   Wed May 29 23:22:38 2024 -0400
+
+    Allow users to choose which coin they will like to use. Gave them 3 options, default, coin1 and coin2
+
+[33mcommit 365d3f624d0899e9f7ab698f54042a02e28bd9bc[m
+Author: Elber Gutierrez <gutiere5@ferris.edu>
+Date:   Wed May 29 23:01:58 2024 -0400
+
+    Added a GUI and also a button that will allow the user to start the coin toss and then shows the results in image
+
+[33mcommit d5fc261b60a1d2c25e4e39bdc0b50b6cb68e5deb[m
+Author: Elber Gutierrez <gutiere5@ferris.edu>
+Date:   Wed May 29 22:38:22 2024 -0400
+
+    Added the ability to track the sum of heads and tails during a session
+
+[33mcommit 1932d2af0d9b3a1b19377d969e555500ac324296[m
+Author: Elber Gutierrez <gutiere5@ferris.edu>
+Date:   Wed May 29 22:33:12 2024 -0400
+
+    Added code to allow the program allow multiple coin tosses
+
+[33mcommit 1bcd4de0bdd6e467396fac9edcf0ce03b3e343c3[m
+Author: Elber Gutierrez <gutiere5@ferris.edu>
+Date:   Wed May 29 22:25:48 2024 -0400
+
+    Added code to the program so it will simulate a coint toss(heads or tails)
