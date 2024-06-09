@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -11,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 
 public class Main extends JFrame implements  ActionListener  {
@@ -18,11 +21,13 @@ public class Main extends JFrame implements  ActionListener  {
 	private int tailsCount = 0;
 	private JLabel resultLabel;
 	private JLabel statsLabel;
+	private JLabel coinSetLabel;
 	private JButton tossButton;
 	private JButton resetButton;
     private JComboBox<String> coinSetComboBox;
 	private ImageIcon headsIcon;
 	private ImageIcon tailsIcon;
+	
 
 	public Main()  {
 		// Set up the frame
@@ -30,14 +35,24 @@ public class Main extends JFrame implements  ActionListener  {
 		setSize(450, 450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
+		
+		// Set background color for the frame
+		getContentPane().setBackground(new Color(60, 63, 65));
 
 		// Set up the result label
 		resultLabel = new JLabel("", SwingConstants.CENTER);
 		resultLabel.setPreferredSize(new Dimension(200, 200));
+		resultLabel.setOpaque(true);
+        resultLabel.setBackground(new Color(43, 43, 43));
 
 		// Set up the statistics label
 		statsLabel = new JLabel("Heads: 0, Tails: 0", SwingConstants.CENTER);
-
+		statsLabel.setForeground(Color.WHITE);
+		
+		// Setting up label for "Choose Coin Set" 
+		coinSetLabel =  new JLabel("Choose Coin Set:");
+		coinSetLabel.setForeground(Color.WHITE);
+		
 		// Set up the button to toss the coin
 		tossButton = new JButton("Toss the Coin");
 		tossButton.addActionListener(this);
@@ -51,7 +66,8 @@ public class Main extends JFrame implements  ActionListener  {
 			}
 		});
 		
-
+		styleButton(resetButton);
+		
         // Set up the coin set combo box
 		String[] coinSets = { "default", "coin1", "coin2" }; 
         coinSetComboBox = new JComboBox<>(coinSets);
@@ -62,10 +78,15 @@ public class Main extends JFrame implements  ActionListener  {
                 loadCoinImages(selectedCoinSet);
             }
         });
+        
+        styleComboBox(coinSetComboBox);
+
 
         // Add components to the frame
         JPanel controlPanel = new JPanel();
-        controlPanel.add(new JLabel("Choose Coin Set:"));
+        controlPanel.setBackground(new Color(60, 63, 65));
+        controlPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        controlPanel.add(coinSetLabel);
         controlPanel.add(coinSetComboBox);
         controlPanel.add(tossButton);
         controlPanel.add(resetButton);
@@ -94,6 +115,19 @@ public class Main extends JFrame implements  ActionListener  {
 		 statsLabel.setText("Heads: 0, Tails: 0");
 		 resultLabel.setIcon(null);
 	 }
+	 
+	 private void styleButton(JButton button) {
+	        button.setBackground(new Color(75, 110, 175));
+	        button.setForeground(Color.WHITE);
+	        button.setFocusPainted(false);
+	        button.setFont(new Font("Arial", Font.BOLD, 12));
+	    }
+
+	    private void styleComboBox(JComboBox<String> comboBox) {
+	        comboBox.setBackground(new Color(75, 110, 175));
+	        comboBox.setForeground(Color.WHITE);
+	        comboBox.setFont(new Font("Arial", Font.BOLD, 12));
+	    }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
